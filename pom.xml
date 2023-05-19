@@ -15,9 +15,10 @@
 	<description>car-records-app</description>
 	<properties>
 		<java.version>17</java.version>
-		<java.grpc.version>1.51.0</java.grpc.version>
-		<protobuf-plugin.version>3.20.1</protobuf-plugin.version>
-		<protobuf.version>3.21.7</protobuf.version>
+		<grpc.version>1.55.1</grpc.version>
+		<protobuf.version>3.23.1</protobuf.version>
+		<protobuf-plugin.version>0.6.1</protobuf-plugin.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -27,18 +28,18 @@
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-stub</artifactId>
-			<version>${java.grpc.version}</version>
+			<version>${grpc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-protobuf</artifactId>
-			<version>${java.grpc.version}</version>
+			<version>${grpc.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.google.protobuf</groupId>
-			<artifactId>protobuf-java-util</artifactId>
-			<version>3.21.7</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.google.protobuf</groupId>-->
+<!--			<artifactId>protobuf-java-util</artifactId>-->
+<!--			<version>3.21.7</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>javax.annotation</groupId>
@@ -58,7 +59,7 @@
 			<extension>
 				<groupId>kr.motd.maven</groupId>
 				<artifactId>os-maven-plugin</artifactId>
-				<version>1.6.2</version>
+				<version>1.7.0</version>
 			</extension>
 		</extensions>
 		<plugins>
@@ -74,21 +75,11 @@
 			<plugin>
 				<groupId>org.xolstice.maven.plugins</groupId>
 				<artifactId>protobuf-maven-plugin</artifactId>
-				<version>0.6.1</version>
+				<version>${protobuf-plugin.version}</version>
 				<configuration>
-					<protocArtifact>com.google.protobuf:protoc:${protobuf-plugin.version}:exe:${os.detected.classifier}
-					</protocArtifact>
+					<protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
 					<pluginId>grpc-java</pluginId>
-					<pluginArtifact>io.grpc:protoc-gen-grpc-java:${java.grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-					<protocPlugins>
-						<protocPlugin>
-							<id>reactor-grpc</id>
-							<groupId>com.salesforce.servicelibs</groupId>
-							<artifactId>reactor-grpc</artifactId>
-							<version>1.2.3</version>
-							<mainClass>com.salesforce.reactorgrpc.ReactorGrpcGenerator</mainClass>
-						</protocPlugin>
-					</protocPlugins>
+					<pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
 				</configuration>
 				<executions>
 					<execution>
