@@ -3,6 +3,12 @@ package com.interview.carrecords.service;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Temporary work arounf for:
+ *
+ *  https://github.com/yidongnan/grpc-spring-boot-starter/pull/775
+ *
+ */
 @Configuration
 @ImportAutoConfiguration({
     //        net.devh.boot.grpc.client.autoconfigure.GrpcClientAutoConfiguration.class,

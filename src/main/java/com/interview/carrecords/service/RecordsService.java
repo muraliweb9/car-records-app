@@ -21,5 +21,12 @@ public class RecordsService extends RecordsServiceGrpc.RecordsServiceImplBase {
 
         // mark process is completed
         responseObserver.onCompleted();
+
+        RecordsServiceGrpc.RecordsServiceBlockingStub stub = RecordsServiceGrpc.newBlockingStub(null);
+
+        RecordsServiceGrpc.newFutureStub(null);
+        RecordsServiceGrpc.newStub(null);
+
+        RecordSaveResponse resp = stub.saveRecord(null);
     }
 }
