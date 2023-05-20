@@ -1,7 +1,11 @@
 package com.interview.carrecords.service;
 
 import io.grpc.stub.StreamObserver;
+import net.devh.boot.grpc.server.service.GrpcService;
+import org.springframework.stereotype.Component;
 
+@GrpcService
+@Component
 public class RecordsService extends RecordsServiceGrpc.RecordsServiceImplBase {
 
     @Override
@@ -9,7 +13,8 @@ public class RecordsService extends RecordsServiceGrpc.RecordsServiceImplBase {
 
         // call repository to load the data from database
         // we have added static data for example
-        RecordSaveResponse recordResp = RecordSaveResponse.newBuilder().build();
+        RecordSaveResponse recordResp =
+                RecordSaveResponse.newBuilder().setRecordId("1").build();
 
         // set the response object
         responseObserver.onNext(recordResp);
