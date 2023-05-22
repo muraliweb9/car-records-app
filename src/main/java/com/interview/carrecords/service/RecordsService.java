@@ -1,11 +1,12 @@
 package com.interview.carrecords.service;
 
+import com.interview.proto.carrecords.service.RecordSaveRequest;
+import com.interview.proto.carrecords.service.RecordSaveResponse;
+import com.interview.proto.carrecords.service.RecordsServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
-import org.springframework.stereotype.Component;
 
 @GrpcService
-@Component
 public class RecordsService extends RecordsServiceGrpc.RecordsServiceImplBase {
 
     @Override
