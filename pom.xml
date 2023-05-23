@@ -86,10 +86,10 @@
             <artifactId>spring-cloud-starter-consul-all</artifactId>
         </dependency>
         <!--======= Spring Cloud Config =======-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-config</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-consul-config</artifactId>-->
+<!--        </dependency>-->
         <!--============== gRPC ===============-->
         <dependency>
             <groupId>io.grpc</groupId>
