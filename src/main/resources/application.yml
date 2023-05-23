@@ -8,6 +8,16 @@ spring:
         url: http://localhost:8100
         # When shut down deregisters from spring boot admin
         auto-deregistration: true
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+      config:
+        enabled: false
+  #config:
+    #import: optional:configserver:http://myhost:8888
 server:
   # Allow for automatic available port allocation
   port: 0
@@ -39,6 +49,8 @@ management:
       show-details: ALWAYS
     shutdown:
       enabled: true
+    prometheus:
+      enabled: true
   endpoints:
     enabledByDefault: true
     env:
@@ -63,15 +75,15 @@ management:
       enabled: true
     os:
       enabled: true
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
+#eureka:
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    metadataMap:
+#      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
 
 
