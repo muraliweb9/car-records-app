@@ -21,34 +21,23 @@
         <protobuf.version>3.23.1</protobuf.version>
     </properties>
     <dependencies>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
-
-        <!--========== gRPC Stubs ==========-->
+        <!--========= gRPC Stubs ========-->
         <dependency>
             <groupId>com.interview.test</groupId>
             <artifactId>car-hire-proto</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.cloud</groupId>-->
-<!--                    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-        </dependency>
-        <!--========== Actuator ==========-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!--============ Web ============-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--========== Spring JPA ==========-->
+        <!--========== Actuator =========-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--======== Spring JPA =========-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -57,30 +46,7 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-        <!--==========Commons Lang ==========-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-        <!--========== Eureka ==========-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-        <!--            <exclusions>-->
-        <!--                <exclusion>-->
-        <!--                    <groupId>com.google.guava</groupId>-->
-        <!--                    <artifactId>guava</artifactId>-->
-        <!--                </exclusion>-->
-        <!--            </exclusions>-->
-        <!--        </dependency>-->
-        <!--========== Lombok ==========-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!--======= Spring Cloud Consul =======-->
+        <!--==== Spring Cloud Consul =====-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-all</artifactId>
@@ -90,28 +56,29 @@
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-starter-consul-config</artifactId>-->
 <!--        </dependency>-->
-        <!--============== gRPC ===============-->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
+        <!--========== gRPC Spring Boot starter ==========-->
         <dependency>
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
             <version>2.14.0.RELEASE</version>
+        </dependency>
+        <!--==========Commons Lang ==========-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <!--========== Lombok ==========-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <!--======== Spring Boot Admin ========-->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
-        <!--		<dependency>-->
-        <!--			<groupId>com.google.protobuf</groupId>-->
-        <!--			<artifactId>protobuf-java-util</artifactId>-->
-        <!--			<version>3.21.7</version>-->
-        <!--		</dependency>-->
-
         <!--==== Annotations (needed for gPRC generated stubs) ====-->
         <dependency>
             <groupId>javax.annotation</groupId>
@@ -129,6 +96,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--===== Code Clean ===== -->
         <dependency>
             <groupId>com.diffplug.spotless</groupId>
             <artifactId>spotless-maven-plugin</artifactId>
@@ -153,7 +121,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <extensions>
             <extension>
@@ -163,7 +130,6 @@
             </extension>
         </extensions>
         <plugins>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
