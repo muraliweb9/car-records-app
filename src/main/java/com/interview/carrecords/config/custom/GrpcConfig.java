@@ -1,13 +1,12 @@
-package com.interview.carrecords.service;
+package com.interview.carrecords.config.custom;
 
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Temporary work arounf for:
- *
- *  https://github.com/yidongnan/grpc-spring-boot-starter/pull/775
- *
+ * Temporary work around for:
+ * <p>
+ * https://github.com/yidongnan/grpc-spring-boot-starter/pull/775
  */
 @Configuration
 @ImportAutoConfiguration({
@@ -17,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
     //        net.devh.boot.grpc.client.autoconfigure.GrpcClientSecurityAutoConfiguration.class,
     //        net.devh.boot.grpc.client.autoconfigure.GrpcClientTraceAutoConfiguration.class,
     //        net.devh.boot.grpc.client.autoconfigure.GrpcDiscoveryClientAutoConfiguration.class,
-
+    //
     net.devh.boot.grpc.common.autoconfigure.GrpcCommonCodecAutoConfiguration.class,
     net.devh.boot.grpc.common.autoconfigure.GrpcCommonTraceAutoConfiguration.class,
     net.devh.boot.grpc.server.autoconfigure.GrpcAdviceAutoConfiguration.class,
