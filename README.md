@@ -60,7 +60,7 @@ grpc:
     port: 0
 ```
 
-`com.interview.carrecords.config.custom.GrpcStarterConfig` is needed as a fix for [https://github.com/yidongnan/grpc-spring-boot-starter/pull/775](https://github.com/yidongnan/grpc-spring-boot-starter/pull/775).
+`com.interview.carrecords.config.custom.GrpcStarterServerConfig` is needed as a fix for [https://github.com/yidongnan/grpc-spring-boot-starter/pull/775](https://github.com/yidongnan/grpc-spring-boot-starter/pull/775).
 
 Define the gRPC service as below:
 
