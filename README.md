@@ -27,7 +27,7 @@ Custom ID is generated via `com.interview.carrecords.config.custom.ConsulAutoReg
 
 Install and run [Consul](https://developer.hashicorp.com/consul/downloads).
 
-Run Consul [locally](http://localhost:8500/ui/dc1/services). 
+Run Consul locally e.g. [http://localhost:8500/ui/dc1/services](http://localhost:8500/ui/dc1/services). 
 
 ### Consul Services
 ![Services](docs/consul-services.png)
