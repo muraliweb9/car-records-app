@@ -97,7 +97,7 @@ public class ConsulAutoRegistration2 extends ConsulAutoRegistration {
         getService().setId(getCustomId());
     }
 
-    /** The customised ID to register on COnsul **/
+    /** The customised ID to register on Consul **/
     private String getCustomId() {
         NewService2 service = (NewService2) getService();
         String name = service.getName();
