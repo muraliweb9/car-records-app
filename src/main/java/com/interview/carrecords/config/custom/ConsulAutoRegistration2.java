@@ -17,6 +17,9 @@ import org.springframework.util.ObjectUtils;
 
 /** Needed to customise the ID used to register with Consul **/
 public class ConsulAutoRegistration2 extends ConsulAutoRegistration {
+
+    private static final String CONSUL_ID_SEPERATOR = "-";
+
     public ConsulAutoRegistration2(
             NewService service,
             AutoServiceRegistrationProperties autoServiceRegistrationProperties,
@@ -105,6 +108,7 @@ public class ConsulAutoRegistration2 extends ConsulAutoRegistration {
         Integer grpc = Integer.valueOf(service.getMeta().get("gRPC_port"));
         String address = service.getAddress();
         String ipAddress = service.getIpAddress();
-        return name + "|" + address + "(" + ipAddress + ")" + "|" + tcp + "(web)" + "|" + grpc + "(gRPC)";
+        return name + CONSUL_ID_SEPERATOR + address + CONSUL_ID_SEPERATOR + ipAddress + CONSUL_ID_SEPERATOR + tcp
+                + "(web)" + CONSUL_ID_SEPERATOR + grpc + "(gRPC)";
     }
 }
