@@ -15,6 +15,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
+/** Needed to customise the ID used to register with Consul **/
 public class ConsulAutoRegistration2 extends ConsulAutoRegistration {
     public ConsulAutoRegistration2(
             NewService service,
@@ -96,6 +97,7 @@ public class ConsulAutoRegistration2 extends ConsulAutoRegistration {
         getService().setId(getCustomId());
     }
 
+    /** The customised ID to register on COnsul **/
     private String getCustomId() {
         NewService2 service = (NewService2) getService();
         String name = service.getName();

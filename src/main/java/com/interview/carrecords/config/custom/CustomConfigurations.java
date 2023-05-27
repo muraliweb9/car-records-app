@@ -17,6 +17,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomConfigurations {
 
+    /** Needed as in GrpcServerProperties below class is no longer available in Spring
+     * import org.springframework.util.SocketUtils;
+     * **/
     @Bean
     public GrpcServerProperties customGrpcServerProperties() {
         return new GrpcServerProperties() {
@@ -37,6 +40,7 @@ public class CustomConfigurations {
         };
     }
 
+    /** Needed to customise the ID used to register with Consul **/
     @Bean
     public ConsulAutoRegistration customConsulAutoRegistration(
             AutoServiceRegistrationProperties autoServiceRegistrationProperties,

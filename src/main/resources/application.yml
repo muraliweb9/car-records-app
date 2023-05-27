@@ -16,8 +16,7 @@ spring:
         instanceId: ${spring.application.name}:${${spring.application.instance_id}:${server.port}:${random.value}}
       config:
         enabled: false
-  #config:
-    #import: optional:configserver:http://myhost:8888
+        #import: optional:configserver:http://myhost:8888
 server:
   # Allow for automatic available port allocation
   port: 0
